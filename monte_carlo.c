@@ -54,7 +54,7 @@ float mc_pi(int n)
   {
     x = frandom();
     y = frandom();
-    pt=((x-1)(x-1))+((y-1)(y-1));
+    pt=((x-1)*(x-1))+((y-1)*(y-1));
     if(pt<=1)
     {
       crcl++;
