@@ -16,7 +16,7 @@ int main(void)
       printf("Estimate with just %d iterations is %f which is too accurate.\n", i, pi);
       abort();
     }
-  }
+ }
 
   for (int i=500; i<3000; i++)
   {
@@ -34,11 +34,11 @@ int main(void)
 float wallis_pi(int n)
 {
 
-  float temp,value=1;
+  float temp,v=1;
   for(int j=1;j<=n;j++)
   {
     temp=4*j*j;
-    value=value*temp/(temp-1);
+    v=v*temp/(temp-1);
   }
-  return value*2;
+  return v*2;
 }
