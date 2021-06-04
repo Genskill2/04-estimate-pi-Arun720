@@ -15,8 +15,8 @@ int main(void)
      {
       printf("Estimate with just %d iterations is %f which is too accurate.\n", i, pi);
       abort();
-    }
- }
+     }
+  }
 
   for (int i=500; i<3000; i++)
   {
