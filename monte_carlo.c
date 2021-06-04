@@ -6,24 +6,24 @@
 
 float mc_pi(int);
 
-float frandom() 
+float frandom()
 {
   long int q = rand();
   float ret = ((float)q)/((float)RAND_MAX);
   return ret*2;
 }
 
-int main(void) 
+int main(void)
 {
   float pi0;
   float pi1;
 
-  
+
   pi0 = mc_pi(25000);
   pi1 = mc_pi(25000);
   printf("%f %f\n", pi0, pi1);
-  
-  if (pi0 == pi1) 
+
+  if (pi0 == pi1)
   {
       printf("Two separate estimates of pi are exactly the same. This is unlikely.\n");
       abort();
@@ -35,27 +35,16 @@ int main(void)
       abort();
   }
 
-     
-  for (int i=2000; i<5000; i++) 
+  for (int i=2000; i<5000; i++)
   {
     pi0 = mc_pi(i);
-    if (!(fabs(pi0 - M_PI) < 0.4)) 
+    if (!(fabs(pi0 - M_PI) < 0.4))
     {
       printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi0);
       abort();
     }
   }
-  
-  /*
-  int i;
-  printf("Enter the number of iterations:");
-  scanf("%d", &i);
 
-  srand(time(NULL));
-
-  pi0 = mc_pi(i);
-  printf("the value of pi is %f\n\n",pi0);
-  */
 
 }
 float mc_pi(int n)
@@ -66,19 +55,15 @@ float mc_pi(int n)
   {
     x = frandom();
     y = frandom();
-    //pt=(x*x)+(y*y)-(2*x)-(2*y)+1;
-    pt=((x-1)*(x-1))+((y-1)*(y-1));
-    //printf("point:%f\n",pt);
+    pt=((x-1)(x-1))+((y-1)(y-1));
     if(pt<=1)
     {
       crcl++;
     }
     sqr++;
-  } 
-  //printf("cirlce:%d  ",crcl);
-  //printf("Square:%d\n",sqr);
+  }
+
 
   pi = ((float)crcl) / ((float)sqr);
-  //printf("pie:%f\n",pi);
   return pi*4;
 }
