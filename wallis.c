@@ -40,5 +40,5 @@ float wallis_pi(int n)
     temp=4*j*j;
     value=value*temp/(temp-1);
   }
-  return value*2
+  return value*2;
 }
